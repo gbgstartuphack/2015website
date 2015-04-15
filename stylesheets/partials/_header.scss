@@ -31,7 +31,16 @@
     margin: 2em;
     width: 24px;
     height: 24px;
+
+    &:hover{
+      cursor:pointer;
+    }
   }
+
+  .rotated {
+    transform: rotate(180deg);
+  }
+
   .header {
     @include vertical-align;
     width: 100vw;
@@ -47,19 +56,26 @@
     }
     .header-info {
       opacity: 0;
-      font-size: 6vmin;
+      font-size: 5vmin;
+      font-weight: 300;
+      margin-top: 0;
+      margin-bottom: 1vh;
+    }
+    .header-date {
+      opacity: 0;
+      font-size: 5vmin;
       margin-top: 0;
       margin-bottom: 1vh;
     }
     .ghost-btn {
       opacity: 0;
-      padding: 2vmin 4vmin;
+      padding: 3vmin 6vmin;
       font-size: 3vmin;
-      cursor: default;
+      cursor: pointer;
 
       &:hover { @include hover; }
     }
-    
+
   }
   .arrow {
     width: 40px;
