@@ -200,8 +200,8 @@ $(document).ready(function() {
    	});
 
    	//Both "the day" text at same place
-   	var text1y = $('.the-day-text:eq(0)').position().top;
-   	$('.the-day-text:eq(1)').css('top', text1y);
+   	// var text1y = $('.the-day-text:eq(0)').position().top;
+   	// $('.the-day-text:eq(1)').css('top', text1y);
 
 	//change between hack and open track
   	$('.the-day .ghost-btn').click(function() {
@@ -233,6 +233,21 @@ $(document).ready(function() {
 		}
 	});
 
+	$('.thisyear-image-holder').magnificPopup({
+		delegate: 'a',
+		type: 'image',
+		tLoading: 'Loading image #%curr%...',
+		mainClass: 'mfp-img-mobile',
+		gallery: {
+			enabled: true,
+			navigateByImgClick: true,
+			preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+		},
+		image: {
+			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
+		}
+	});
+
 
 	//fix span arrow and float in crew
 	var peoples = $('.people');
@@ -248,11 +263,11 @@ $(document).ready(function() {
 	});
 
 	//ON RESIZE
-	$(window).resize(function() {
-		//Make sure "the day" texts end up on same place
-		var text1y = $('.the-day-text:eq(0)').position().top;
-		$('.the-day-text:eq(1)').css('top', text1y);
-	});
+	// $(window).resize(function() {
+	// 	//Make sure "the day" texts end up on same place
+	// 	var text1y = $('.the-day-text:eq(0)').position().top;
+	// 	$('.the-day-text:eq(1)').css('top', text1y);
+	// });
 
 });
 
